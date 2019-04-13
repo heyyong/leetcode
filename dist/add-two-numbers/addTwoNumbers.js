@@ -6,16 +6,16 @@ class ListNode {
         this.next = next;
     }
     *[Symbol.iterator]() {
-        let head = new ListNode(-1, this);
+        const head = new ListNode(-1, this);
         while (head.next !== null && head.next.val >= 0) {
             yield head.next.val;
             head.next = head.next.next;
         }
     }
     static from(iteration) {
-        let head = new ListNode(-1, null);
+        const head = new ListNode(-1, null);
         let pointer = head;
-        for (let val of iteration) {
+        for (const val of iteration) {
             pointer.next = new ListNode(val, null);
             pointer = pointer.next;
         }
@@ -26,7 +26,7 @@ exports.ListNode = ListNode;
 function addTwoNumbers(l1, l2) {
     let l1Val;
     let l2Val;
-    let head = new ListNode(-1, null);
+    const head = new ListNode(-1, null);
     let pointer = head;
     let carry = 0;
     while (l1 && l1.val >= 0 || l2 && l2.val >= 0 || carry > 0) {
