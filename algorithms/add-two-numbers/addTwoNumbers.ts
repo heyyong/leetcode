@@ -4,8 +4,8 @@ export class ListNode {
     public next: ListNode | null = null
   ) { }
 
-  public *[Symbol.iterator](): IterableIterator<number> {
-    let head = new ListNode(-1, this);
+  public* [Symbol.iterator](): IterableIterator<number> {
+    const head = new ListNode(-1, this);
     while (head.next !== null && head.next.val >= 0) {
       yield head.next.val;
       head.next = head.next.next;
@@ -15,10 +15,10 @@ export class ListNode {
   public static from(iteration: {
     [Symbol.iterator](): IterableIterator<number>
   }): ListNode {
-    let head = new ListNode(-1, null);
+    const head = new ListNode(-1, null);
     let pointer: ListNode = head;
 
-    for (let val of iteration) {
+    for (const val of iteration) {
       pointer.next = new ListNode(val, null);
       pointer = pointer.next;
     }
@@ -30,7 +30,7 @@ export class ListNode {
 export function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode {
   let l1Val: number;
   let l2Val: number;
-  let head: ListNode = new ListNode(-1, null);
+  const head: ListNode = new ListNode(-1, null);
   let pointer = head;
   let carry: 0 | 1 = 0;
 
