@@ -1,9 +1,9 @@
-export function longestPalindrome(s: string = ''): string {
-  let n = s.length;
-  let ans = {
+export function longestPalindrome(s: string = ""): string {
+  const n = s.length;
+  const ans = {
     i: 0,
     j: 0,
-    length: 0
+    length: 0,
   };
 
   for (let i = 0; i < n; i ++) {
@@ -20,10 +20,10 @@ export function longestPalindrome(s: string = ''): string {
 }
 
 export function checkPalindrome(str: string, start: number, end: number) {
-  if(start === end) return false;
+  if (start === end) return false;
 
-  for(let i = 0; start + i < end; i++) {
-    if(str[start + i] !== str[end - i - 1]) return false;
+  for (let i = 0; start + i < end; i++) {
+    if (str[start + i] !== str[end - i - 1]) return false;
   }
 
   return true;

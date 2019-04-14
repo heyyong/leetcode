@@ -1,18 +1,18 @@
-import { checkPalindrome } from './longestPalindrome.enumerate';
+import {checkPalindrome} from "./longestPalindrome.enumerate";
 
-export function longestPalindrome(s: string = ''): string {
-  let n = s.length;
-  let substrMatrix: number[][] = (
+export function longestPalindrome(s: string = ""): string {
+  const n = s.length;
+  const substrMatrix: number[][] = (
     new Array(n)
       .fill(null)
       .map(
         () => new Array(n).fill(0)
       )
   );
-  let maxPos = {
+  const maxPos = {
     length: 0,
     row: -1,
-    column: -1
+    column: -1,
   };
 
   const reversePos = (index: number) => (n - index);
@@ -29,7 +29,7 @@ export function longestPalindrome(s: string = ''): string {
           }
 
           if (
-            substrMatrix[row][column] > maxPos.length && 
+            substrMatrix[row][column] > maxPos.length &&
             checkPalindrome(s, ...getSlicePos(row, column, substrMatrix[row][column]))
           ) {
             maxPos.row = row;
@@ -40,6 +40,7 @@ export function longestPalindrome(s: string = ''): string {
       }
     )
   );
-  
+
+  if (maxPos.length === 0) return "";
   return s.slice(...getSlicePos(maxPos.row, maxPos.column, substrMatrix[maxPos.row][maxPos.column]));
 }
