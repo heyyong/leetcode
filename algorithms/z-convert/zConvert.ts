@@ -9,7 +9,7 @@ export function zConvert(s: string, numRows: number): string {
     rowMatrix[currRow] += char;
     if (currRow === 0 || currRow === numRows - 1) goingDown = !goingDown;
 
-    currRow += goingDown? 1 : -1;
+    currRow += goingDown ? 1 : -1;
   }
 
   return rowMatrix.reduce((ret, str) => `${ret}${str}`, "");

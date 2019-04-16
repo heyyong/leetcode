@@ -1,4 +1,4 @@
-import {zConvert} from "./zConvert";
+import { zConvert } from "./zConvert";
 
 describe("z convert", function() {
   test("LEETCODEISHIRING", function() {

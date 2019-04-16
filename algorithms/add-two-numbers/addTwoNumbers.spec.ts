@@ -1,4 +1,4 @@
-import {ListNode, addTwoNumbers} from "./addTwoNumbers";
+import { ListNode, addTwoNumbers } from "./addTwoNumbers";
 
 describe("add two numbers", function() {
   test("[2, 4, 3], [5, 6, 4]", function() {

@@ -2,18 +2,23 @@ type Palindrome = {
   start: number;
   end: number;
   length: number;
-}
+};
 
 export function longestPalindrome(s: string = ""): string {
   const n = s.length;
-  const longestPalindrome: Palindrome | null = {start: -1, end: -1, length: 0};
+  const longestPalindrome: Palindrome | null = {
+    start: -1,
+    end: -1,
+    length: 0
+  };
   const smallestPalindrome: Palindrome[] = [];
 
-
-  const spreadPalindrome = (s: string, start: number, end: number): void => { // [start, end)
+  const spreadPalindrome = (s: string, start: number, end: number): void => {
+    // [start, end)
     if (
       // check substring exist
-      s[start] !== undefined && s[end - 1] !== undefined &&
+      s[start] !== undefined &&
+      s[end - 1] !== undefined &&
       // check new substring is palindrome
       s[start] === s[end - 1]
     ) {
@@ -26,30 +31,26 @@ export function longestPalindrome(s: string = ""): string {
     }
   };
 
-  Array
-    .from(s)
-    .reduce(
-      (smallestPalindrome, _, i) => {
+  Array.from(s)
+    .reduce((smallestPalindrome, _, i) => {
+      smallestPalindrome.push({
+        start: i,
+        end: i + 1,
+        length: 1
+      });
+
+      // find single char palindrome
+      if (i + 1 < n && s[i] === s[i + 1]) {
         smallestPalindrome.push({
           start: i,
-          end: i + 1,
-          length: 1,
+          end: i + 2,
+          length: 2
         });
+      }
 
-        // find single char palindrome
-        if (i + 1 < n && s[i] === s[i + 1]) {
-          smallestPalindrome.push({
-            start: i,
-            end: i + 2,
-            length: 2,
-          });
-        }
-
-        return smallestPalindrome;
-      },
-      smallestPalindrome
-    )
-    .forEach((smallestPalindrome) => {
+      return smallestPalindrome;
+    }, smallestPalindrome)
+    .forEach(smallestPalindrome => {
       spreadPalindrome(s, smallestPalindrome.start, smallestPalindrome.end);
     });
 
