@@ -20,5 +20,9 @@ describe("reverse int", function() {
     test("overflow", function() {
       expect(reverseInt(1534236469)).toEqual(0);
     });
+
+    test('-2147483412', function() {
+      expect(reverseInt(-2147483412)).toEqual(-2143847412)
+    })
   });
 });
