@@ -3,7 +3,7 @@ export function longestPalindrome(s: string = ""): string {
   const ans = {
     i: 0,
     j: 0,
-    length: 0
+    length: 0,
   };
 
   for (let i = 0; i < n; i++) {

@@ -1,4 +1,4 @@
-import { twoSum } from "./twoSum";
+import {twoSum} from "./twoSum";
 
 test("two sums", function() {
   const nums = [2, 7, 11, 15];

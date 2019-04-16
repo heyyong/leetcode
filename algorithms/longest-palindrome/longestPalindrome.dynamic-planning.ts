@@ -6,7 +6,7 @@ type Palindrome = {
 
 export function longestPalindrome(s: string = ""): string {
   const n = s.length;
-  const longestPalindrome: Palindrome | null = { start: -1, end: -1, length: 0 };
+  const longestPalindrome: Palindrome | null = {start: -1, end: -1, length: 0};
   const smallestPalindrome: Palindrome[] = [];
 
 
@@ -24,7 +24,7 @@ export function longestPalindrome(s: string = ""): string {
       }
       return spreadPalindrome(s, start - 1, end + 1);
     }
-  }
+  };
 
   Array
     .from(s)
@@ -35,7 +35,7 @@ export function longestPalindrome(s: string = ""): string {
           smallestPalindrome.push({
             start: i,
             end: i + 2,
-            length: 2
+            length: 2,
           });
         }
 
@@ -44,7 +44,7 @@ export function longestPalindrome(s: string = ""): string {
           smallestPalindrome.push({
             start: i - 1,
             end: i + 2,
-            length: 3
+            length: 3,
           });
         }
 
@@ -56,7 +56,7 @@ export function longestPalindrome(s: string = ""): string {
       spreadPalindrome(s, smallestPalindrome.start, smallestPalindrome.end);
     });
 
-  if (longestPalindrome.length === 0) return '';
+  if (longestPalindrome.length === 0) return "";
 
   return s.slice(longestPalindrome.start, longestPalindrome.end);
 }

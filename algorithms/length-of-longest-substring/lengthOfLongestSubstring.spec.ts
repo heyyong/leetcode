@@ -1,4 +1,4 @@
-import { lengthOfLongestSubstring } from "./lengthOfLongestSubstring";
+import {lengthOfLongestSubstring} from "./lengthOfLongestSubstring";
 
 describe("length of longest substring", function() {
   test("abcabcbb", function() {

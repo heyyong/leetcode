@@ -1,13 +1,13 @@
-import { findMedianSortedArrays } from "./findMedianSortedArrays.linear";
-import { findMedianSortedArrays as findMedianSortedArraysLogarithms } from "./findMedianSortedArrays.logarithm";
+import {findMedianSortedArrays} from "./findMedianSortedArrays.linear";
+import {findMedianSortedArrays as findMedianSortedArraysLogarithms} from "./findMedianSortedArrays.logarithm";
 
 const findMedianSortedArraysMethods = [
   findMedianSortedArrays,
-  findMedianSortedArraysLogarithms
+  findMedianSortedArraysLogarithms,
 ];
 
 describe("find median sorted arrays", function() {
-  findMedianSortedArraysMethods.forEach(findMedianSortedArrays => {
+  findMedianSortedArraysMethods.forEach((findMedianSortedArrays) => {
     test("[1, 3], [2]", function() {
       expect(findMedianSortedArrays([1, 3], [2])).toEqual(2.0);
     });
@@ -45,7 +45,7 @@ describe("find median sorted arrays", function() {
             19,
             20,
             21,
-            22
+            22,
           ],
           [0, 6]
         )

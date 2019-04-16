@@ -1,4 +1,4 @@
-import { checkPalindrome } from "./longestPalindrome.enumerate";
+import {checkPalindrome} from "./longestPalindrome.enumerate";
 
 export function longestPalindrome(s: string = ""): string {
   const n = s.length;
@@ -8,7 +8,7 @@ export function longestPalindrome(s: string = ""): string {
   const maxPos = {
     length: 0,
     row: -1,
-    column: -1
+    column: -1,
   };
 
   const reversePos = (index: number) => n - index;
