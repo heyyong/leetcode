@@ -8,7 +8,7 @@ export function myAtoi(str: string): number {
   let op: boolean = true;
   const strIter = str[Symbol.iterator]();
   let char: IteratorResult<string> = strIter.next();
-  while(char.value === ' ' && !char.done) char = strIter.next();
+  while (char.value === " " && !char.done) char = strIter.next();
 
   if (char.value === "-") {
     op = false;

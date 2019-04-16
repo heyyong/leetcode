@@ -1,15 +1,14 @@
 export function isPalindrome(x: number): boolean {
-  if (x < 0) return false;
+  if (x < 0 || (x !== 0 && x <= 10)) return false;
 
   let reversed: number = 0;
-  const copyX = x;
   let currBit = 0;
 
-  while (x !== 0) {
-    currBit = x % 10;
+  while (x > reversed) {
+    currBit = reversed % 10;
     x = Math.floor(x / 10);
     reversed = reversed * 10 + currBit;
   }
 
-  return copyX === reversed;
+  return x === reversed || Math.floor(x / 10) === x;
 }
