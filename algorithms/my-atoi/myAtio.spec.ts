@@ -16,4 +16,8 @@ describe("my atio", function() {
   test("nagative overflow", function() {
     expect(myAtoi("-91283472332")).toEqual(-2147483648);
   });
+
+  test("positive overflow", function() {
+    expect(myAtoi("2147483648")).toEqual(2147483647);
+  });
 });

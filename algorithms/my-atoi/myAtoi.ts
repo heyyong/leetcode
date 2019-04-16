@@ -1,7 +1,6 @@
 const INT_MIN = -2147483648;
-const INT_MAX = 2147483648;
+const INT_MAX = 2147483647;
 
-const MAX_BOUNDARY = 214748364;
 const ZERO = 48;
 
 export function myAtoi(str: string): number {
@@ -12,7 +11,7 @@ export function myAtoi(str: string): number {
   if (str[0] === "-") {
     op = false;
     str = str.slice(1);
-  } else if (str[1] === "+") {
+  } else if (str[0] === "+") {
     str = str.slice(1);
   }
 
@@ -21,7 +20,7 @@ export function myAtoi(str: string): number {
 
     if (isNaN(curBit)) {
       return op ? ret : -ret;
-    } else if (ret > MAX_BOUNDARY) {
+    } else if (INT_MAX - ret * 10 < curBit) {
       return op ? INT_MAX : INT_MIN;
     }
 
