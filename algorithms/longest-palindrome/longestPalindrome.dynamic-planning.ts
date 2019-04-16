@@ -35,7 +35,7 @@ export function longestPalindrome(s: string = ""): string {
           end: i + 1,
           length: 1,
         });
-        
+
         // find single char palindrome
         if (i + 1 < n && s[i] === s[i + 1]) {
           smallestPalindrome.push({

@@ -1,13 +1,13 @@
 import {longestPalindrome} from "./longestPalindrome.enumerate";
 import {longestPalindrome as longestPalindromeSubStr} from "./longestPalindrome.substr";
 import {longestPalindrome as longestPalindromeDynamicPlanning} from "./longestPalindrome.dynamic-planning";
-import { longestPalindrome as longestPalindromeExpandAroundCenter } from './longestPalindrome.expandAroundCenter';
+import {longestPalindrome as longestPalindromeExpandAroundCenter} from "./longestPalindrome.expandAroundCenter";
 
 const longestPalindromeMethods = [
-  longestPalindrome, 
-  longestPalindromeSubStr, 
-  longestPalindromeDynamicPlanning, 
-  longestPalindromeExpandAroundCenter
+  longestPalindrome,
+  longestPalindromeSubStr,
+  longestPalindromeDynamicPlanning,
+  longestPalindromeExpandAroundCenter,
 ];
 
 const dddd = "dddd";
@@ -29,9 +29,9 @@ const expectAABCAA =
 
 describe("longest palindrome", function() {
   longestPalindromeMethods.forEach((longestPalindrome) => {
-    test('single char', function() {
-      expect(longestPalindrome('a')).toEqual('a');
-    })
+    test("single char", function() {
+      expect(longestPalindrome("a")).toEqual("a");
+    });
 
     test("babad", function() {
       expect(longestPalindrome("babsd")).toEqual("bab");
