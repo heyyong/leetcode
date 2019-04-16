@@ -9,7 +9,7 @@
     "test": "jest",
     "lint": "eslint algorithms/ --ext .ts --fix",
     "build": "tsc -p tsconfig.json",
-    "excute": "yarn test && yarn lint && yarn build"
+    "execute": "yarn test && yarn lint && yarn build"
   },
   "devDependencies": {
     "@types/jest": "^24.0.11",
