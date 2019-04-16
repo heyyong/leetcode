@@ -23,6 +23,10 @@ const expectAABCAA =
 
 describe("longest palindrome", function() {
   longestPalindromeMethods.forEach((longestPalindrome) => {
+    test('single char', function() {
+      expect(longestPalindrome('a')).toEqual('a');
+    })
+
     test("babad", function() {
       expect(longestPalindrome("babsd")).toEqual("bab");
     });

@@ -5,6 +5,8 @@ type Palindrome = {
 }
 
 export function longestPalindrome(s: string = ""): string {
+  if (s.length === 0 || s.length === 1) return s;
+
   const n = s.length;
   const longestPalindrome: Palindrome | null = {start: -1, end: -1, length: 0};
   const smallestPalindrome: Palindrome[] = [];
