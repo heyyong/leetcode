@@ -1,8 +1,14 @@
 import {longestPalindrome} from "./longestPalindrome.enumerate";
 import {longestPalindrome as longestPalindromeSubStr} from "./longestPalindrome.substr";
 import {longestPalindrome as longestPalindromeDynamicPlanning} from "./longestPalindrome.dynamic-planning";
+import { longestPalindrome as longestPalindromeExpandAroundCenter } from './longestPalindrome.expandAroundCenter';
 
-const longestPalindromeMethods = [longestPalindrome, longestPalindromeSubStr, longestPalindromeDynamicPlanning];
+const longestPalindromeMethods = [
+  longestPalindrome, 
+  longestPalindromeSubStr, 
+  longestPalindromeDynamicPlanning, 
+  longestPalindromeExpandAroundCenter
+];
 
 const dddd = "dddd";
 const aabcaa =
