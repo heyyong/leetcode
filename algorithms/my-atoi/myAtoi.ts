@@ -6,17 +6,19 @@ const ZERO = 48;
 export function myAtoi(str: string): number {
   let ret: number = 0;
   let op: boolean = true;
-  str = str.trimLeft();
+  const strIter = str[Symbol.iterator]();
+  let char: IteratorResult<string> = strIter.next();
+  while(char.value === ' ' && !char.done) char = strIter.next();
 
-  if (str[0] === "-") {
+  if (char.value === "-") {
     op = false;
-    str = str.slice(1);
-  } else if (str[0] === "+") {
-    str = str.slice(1);
+    char = strIter.next();
+  } else if (char.value === "+") {
+    char = strIter.next();
   }
 
-  for (const char of str) {
-    const curBit = parseCharInt(char);
+  while (!char.done) {
+    const curBit = parseCharInt(char.value);
 
     if (isNaN(curBit)) {
       return op ? ret : -ret;
@@ -25,6 +27,8 @@ export function myAtoi(str: string): number {
     }
 
     ret = ret * 10 + curBit;
+
+    char = strIter.next();
   }
 
   return op ? ret : -ret;
