@@ -11,5 +11,5 @@ describe("z convert", function() {
 
   test("asdf", function() {
     expect(zConvert("asdf", 1)).toEqual("asdf");
-  })
+  });
 });

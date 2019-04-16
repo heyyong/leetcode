@@ -1,5 +1,5 @@
 export function zConvert(s: string, numRows: number): string {
-  if(numRows === 1) return s;
+  if (numRows === 1) return s;
 
   const rowMatrix: string[] = new Array(numRows).fill("");
   let currRow = 0;
