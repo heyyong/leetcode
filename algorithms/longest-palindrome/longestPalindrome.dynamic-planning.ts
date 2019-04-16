@@ -5,8 +5,6 @@ type Palindrome = {
 }
 
 export function longestPalindrome(s: string = ""): string {
-  if (s.length === 0 || s.length === 1) return s;
-
   const n = s.length;
   const longestPalindrome: Palindrome | null = {start: -1, end: -1, length: 0};
   const smallestPalindrome: Palindrome[] = [];
@@ -32,21 +30,18 @@ export function longestPalindrome(s: string = ""): string {
     .from(s)
     .reduce(
       (smallestPalindrome, _, i) => {
+        smallestPalindrome.push({
+          start: i,
+          end: i + 1,
+          length: 1,
+        });
+        
         // find single char palindrome
         if (i + 1 < n && s[i] === s[i + 1]) {
           smallestPalindrome.push({
             start: i,
             end: i + 2,
             length: 2,
-          });
-        }
-
-        // find three char palindrome
-        if (i - 1 >= 0 && i + 1 < n && s[i - 1] === s[i + 1]) {
-          smallestPalindrome.push({
-            start: i - 1,
-            end: i + 2,
-            length: 3,
           });
         }
 
