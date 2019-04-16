@@ -1,6 +1,6 @@
 import { isPalindrome as isPalindromeStr } from "./isPalindrome.str";
 import { isPalindrome as isPalindromeCalculate } from "./isPalindrome.caculate";
-import { isPalindrome as isPalindromeReverseCalculate } from "./isPalindrome.reverseCalculate";
+import { isPalindrome as isPalindromeReverseCalculate } from "./isPalindrome.revertedCalculate";
 
 const isPalindromeMethods = [
   isPalindromeStr,
@@ -20,6 +20,10 @@ describe("is palindrome", function() {
 
     test("10", function() {
       expect(isPalindrome(10)).toBeFalsy();
+    });
+
+    test("123", function() {
+      expect(isPalindrome(123)).toEqual(false);
     });
   });
 });
