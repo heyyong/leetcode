@@ -1,4 +1,7 @@
-export function findMedianSortedArrays(A: number[] = [], B: number[] = []): number | null {
+export function findMedianSortedArrays(
+  A: number[] = [],
+  B: number[] = []
+): number | null {
   if (A.length === 0 && B.length === 0) return null;
 
   let m = A.length;
@@ -10,7 +13,8 @@ export function findMedianSortedArrays(A: number[] = [], B: number[] = []): numb
   }
 
   // 0 <= i < m
-  let iMin = 0; let iMax = m;
+  let iMin = 0;
+  let iMax = m;
   const halfLen = Math.floor((m + n + 1) / 2);
 
   while (iMin <= iMax) {
@@ -20,7 +24,8 @@ export function findMedianSortedArrays(A: number[] = [], B: number[] = []): numb
       iMin = i + 1; // 说明 i 小了
     } else if (i > iMin && A[i - 1] > B[j]) {
       iMax = i - 1; // 说明 i 大了
-    } else { //
+    } else {
+      //
       let maxLeft = 0;
       if (i === 0) {
         maxLeft = B[j - 1];
@@ -30,7 +35,7 @@ export function findMedianSortedArrays(A: number[] = [], B: number[] = []): numb
         maxLeft = Math.max(A[i - 1], B[j - 1]);
       }
 
-      if ( (m + n) % 2 === 1) return maxLeft;
+      if ((m + n) % 2 === 1) return maxLeft;
 
       let minRight = 0;
       if (i === m) {

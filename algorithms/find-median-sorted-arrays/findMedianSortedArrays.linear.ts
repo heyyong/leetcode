@@ -1,4 +1,7 @@
-export function findMedianSortedArrays(nums1: number[] = [], nums2: number[] = []): number | null {
+export function findMedianSortedArrays(
+  nums1: number[] = [],
+  nums2: number[] = []
+): number | null {
   const ans: number[] = [];
   const ansLen = nums1.length + nums2.length;
 
@@ -7,10 +10,7 @@ export function findMedianSortedArrays(nums1: number[] = [], nums2: number[] = [
   let currNum1: number | undefined = nums1.shift();
   let currNum2: number | undefined = nums2.shift();
 
-  while (
-    currNum1 !== undefined ||
-    currNum2 !== undefined
-  ) {
+  while (currNum1 !== undefined || currNum2 !== undefined) {
     if (currNum1 === undefined) {
       ans.push(currNum2!, ...nums2);
       break;

@@ -1,4 +1,4 @@
-import {lengthOfLongestSubstring} from "./lengthOfLongestSubstring";
+import { lengthOfLongestSubstring } from "./lengthOfLongestSubstring";
 
 describe("length of longest substring", function() {
   test("abcabcbb", function() {
@@ -14,9 +14,7 @@ describe("length of longest substring", function() {
   });
 
   test("au", function() {
-    expect(
-      lengthOfLongestSubstring("au")
-    ).toEqual("au".length);
+    expect(lengthOfLongestSubstring("au")).toEqual("au".length);
   });
 
   test("abba", function() {
