@@ -1,55 +1,65 @@
+/* eslint-disable */
 export function romanToInt(s: string): number {
-  const n = s.length;
   let offset = 0;
   let num = 0;
 
-  while (s[offset] !== undefined) {
-    if (s[offset] === "M") {
-      num += 1000;
-    } else if (s[offset] === "D") {
-      num += 500;
-    } else if (s[offset] === "C") {
-      // for 'CM' or 'CD'
-      if (offset + 1 < n && s[offset + 1] === "M") {
-        num += 900;
-        offset++;
-      } else if (offset + 1 < n && s[offset + 1] === "D") {
-        num += 400;
-        offset++;
-      } else {
-        num += 100;
-      }
-    } else if (s[offset] === "L") {
-      num += 50;
-    } else if (s[offset] === "X") {
-      // for 'XC' or 'XL'
-      if (offset + 1 < n && s[offset + 1] === "C") {
-        num += 90;
-        offset++;
-      } else if (offset + 1 < n && s[offset + 1] === "L") {
-        num += 40;
-        offset++;
-      } else {
-        num += 10;
-      }
-    } else if (s[offset] === "V") {
-      num += 5;
-    } else if (s[offset] === "I") {
-      // for 'IX' or 'IV'
-      if (offset + 1 < n && s[offset + 1] === "X") {
-        num += 9;
-        offset++;
-      } else if (offset + 1 < n && s[offset + 1] === "V") {
-        num += 4;
-        offset++;
-      } else {
+  while (s.charAt(offset) !== "") {
+    switch (s.charAt(offset)) {
+      case "I": {
         num += 1;
+        break;
       }
-    } else {
-      throw new Error(`un-supported roman char ${s[offset]}`);
+      case "V": {
+        num += 5;
+        break;
+      }
+      case "X": {
+        num += 10;
+        break;
+      }
+      case "L": {
+        num += 50;
+        break;
+      }
+      case "C": {
+        num += 100;
+        break;
+      }
+      case "D": {
+        num += 500;
+        break;
+      }
+      case "M": {
+        num += 1000;
+        break;
+      }
+      default: {
+        break;
+      }
     }
+
+    if (offset > 0) {
+      if (
+        (s.charAt(offset) === "V" || s.charAt(offset) === "X") &&
+        s.charAt(offset - 1) === "I"
+      ) {
+        num -= 1 * 2;
+      } else if (
+        (s.charAt(offset) === "L" || s.charAt(offset) === "C") &&
+        s.charAt(offset - 1) === "X"
+      ) {
+        num -= 10 * 2;
+      } else if (
+        (s.charAt(offset) === "D" || s.charAt(offset) === "M") &&
+        s.charAt(offset - 1) === "C"
+      ) {
+        num -= 100 * 2;
+      }
+    }
+
     offset++;
   }
 
   return num;
 }
+/* eslint-enable */
