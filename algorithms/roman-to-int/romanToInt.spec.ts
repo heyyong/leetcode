@@ -16,4 +16,8 @@ describe("roman to int", function() {
   test("LVIII", function() {
     expect(romanToInt("LVIII")).toEqual(58);
   });
+
+  test("MCMXCIV", function() {
+    expect(romanToInt("MCMXCIV")).toEqual(1994);
+  })
 });

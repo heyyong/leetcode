@@ -13,8 +13,7 @@ export function romanToInt(s: string): number {
       if (offset + 1 < n && s[offset + 1] === "M") {
         num += 900;
         offset++;
-      }
-      if (offset + 1 < n && s[offset + 1] === "D") {
+      } else if (offset + 1 < n && s[offset + 1] === "D") {
         num += 500;
         offset++;
       } else {
