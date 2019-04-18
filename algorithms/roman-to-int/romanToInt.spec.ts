@@ -20,4 +20,8 @@ describe("roman to int", function() {
   test("MCMXCIV", function() {
     expect(romanToInt("MCMXCIV")).toEqual(1994);
   })
+
+  test("MCDLXXVI", function() {
+    expect(romanToInt("MCDLXXVI")).toEqual(1476)
+  })
 });

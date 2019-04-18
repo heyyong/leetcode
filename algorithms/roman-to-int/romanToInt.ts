@@ -14,7 +14,7 @@ export function romanToInt(s: string): number {
         num += 900;
         offset++;
       } else if (offset + 1 < n && s[offset + 1] === "D") {
-        num += 500;
+        num += 400;
         offset++;
       } else {
         num += 100;
