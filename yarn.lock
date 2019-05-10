@@ -1566,6 +1566,11 @@ has@^1.0.1, has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
+hasky@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/hasky/-/hasky-3.0.2.tgz#16f2807bc87969a6c6c3ef7922e9fe2c13a869eb"
+  integrity sha512-p+Bsfws1CkjtZHA8tSx/uFJyFm78AH//bIuxLu4TstbUa6PO2ufJAhiok7JTIB9z29K/vn0VC6qI8M1MjRunJA==
+
 hosted-git-info@^2.1.4:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.7.1.tgz#97f236977bd6e125408930ff6de3eec6281ec047"
