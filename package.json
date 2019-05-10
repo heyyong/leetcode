@@ -9,7 +9,11 @@
     "test": "jest",
     "lint": "eslint algorithms/ --ext .ts --fix",
     "build": "tsc -p tsconfig.json",
-    "execute": "yarn test && yarn lint && yarn build"
+    "execute": "yarn test && yarn lint && yarn build",
+    "t": "yarn test",
+    "l": "yarn lint",
+    "b": "yarn build",
+    "e": "yarn execute"
   },
   "devDependencies": {
     "@types/jest": "^24.0.11",
