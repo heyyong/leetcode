@@ -26,6 +26,7 @@ export function fourSum(
       }
       while (nums[j] === nums[j + 1]) j++;
     }
+    while (nums[i] === nums[i + 1]) i++;
   }
 
   return ret;

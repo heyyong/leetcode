@@ -20,4 +20,10 @@ describe("four sum", function() {
       ])
     );
   });
+
+  test("[-1, -5, -5, -3, 2, 5, 0, 4]", function() {
+    expect(new Set(fourSum([-1, -5, -5, -3, 2, 5, 0, 4], -7))).toEqual(
+      new Set([[-5, -5, -1, 4], [-5, -3, -1, 2]])
+    );
+  });
 });
