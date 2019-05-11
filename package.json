@@ -10,6 +10,7 @@
     "lint": "eslint algorithms/ --ext .ts --fix",
     "build": "tsc -p tsconfig.json",
     "execute": "yarn test && yarn lint && yarn build",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "t": "yarn test",
     "l": "yarn lint",
     "b": "yarn build",
@@ -21,6 +22,7 @@
     "@types/jest": "^24.0.11",
     "@typescript-eslint/parser": "^1.6.0",
     "conventional-changelog": "^3.1.8",
+    "conventional-changelog-cli": "^2.0.21",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.16.0",
     "eslint-config-google": "^0.12.0",
@@ -50,7 +52,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint && yarn test",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS && yarn changelog"
     }
   }
 }
