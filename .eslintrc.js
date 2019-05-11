@@ -23,6 +23,7 @@ module.exports = {
         "quotes": ["error", "double"],
         "indent": ["error", 2],
         "require-jsdoc": 0,
-        "max-len": ["error", 120]
+        "max-len": ["error", 120],
+        "no-unused-vars": 0
     }
 };
