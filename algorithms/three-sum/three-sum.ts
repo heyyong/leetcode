@@ -1,37 +1,33 @@
-export function threeSum(nums: number[]): number[][] {
-  const n = nums.length;
-  const results: [number, number, number][] = [];
-
+export function threeSum(
+  nums: number[],
+  target: number
+): [number, number, number][] | null {
   nums = nums.sort((a, b) => a - b);
-
+  const n = nums.length;
+  const result: [number, number, number][] = [];
   for (let i = 0; i < n - 2; i++) {
-    if (i > 0 && nums[i] === nums[i - 1]) continue;
-    if (nums[i] > 0) break;
-
-    let j = i + 1;
-    let k = n - 1;
     const a = nums[i];
-    while (j < k) {
-      const b = nums[j];
-      const c = nums[k];
-      const result = a + b + c;
+    let l = i + 1;
+    let r = n - 1;
+    while (l < r) {
+      const b = nums[l];
+      const c = nums[r];
+      const sum = a + b + c;
+      if (sum < target) {
+        l++;
+      } else if (sum > target) {
+        r--;
+      } else {
+        result.push([a, b, c]);
 
-      if (result < 0) {
-        j++;
-      } else if (result > 0) {
-        k--;
-      }
-
-      if (result === 0) {
-        results.push([a, b, c]);
-
-        while (j < k && nums[j] === nums[j + 1]) j++;
-        while (j < k && nums[k] === nums[k - 1]) k--;
-        j++;
-        k--;
+        while (nums[l] === nums[l + 1]) l++;
+        while (nums[r] === nums[r - 1]) r--;
+        l++;
+        r--;
       }
     }
+    while (nums[i] === nums[i + 1]) i++;
   }
 
-  return results;
+  return result;
 }
