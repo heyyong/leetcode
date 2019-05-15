@@ -5,3 +5,6 @@
 
 ## TODOs
 - [x] add jest util to ignore order in array
+
+## Optimize Performance
+- [] generate parenthesis

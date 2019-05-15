@@ -1,7 +1,7 @@
 import { ListNode } from "@helper/ListNode";
 
 export function mergeKLists(lists: ListNode[]): ListNode | null {
-  lists = lists.filter(list => list !== null)
+  lists = lists.filter(list => list !== null);
   const head = new ListNode(0);
   let pointer = head;
   while (lists.length !== 0) {
