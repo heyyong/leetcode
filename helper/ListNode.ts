@@ -1,11 +1,24 @@
-export class ListNode {
+export class ListNode implements Iterable<number | undefined> {
   constructor(public val: number, public next: ListNode | null = null) {}
 
-  public *[Symbol.iterator](): IterableIterator<number> {
-    const head = new ListNode(-1, this);
-    while (head.next !== null && head.next.val >= 0) {
-      yield head.next.val;
-      head.next = head.next.next;
+  public [Symbol.iterator](): Iterator<number | undefined> {
+    let pointer: ListNode | null = this;
+    return {
+      next(): IteratorResult<number | undefined> {
+        if(pointer !== null) {
+          let curr = pointer;
+          pointer = pointer.next;
+          return {
+            value: curr.val,
+            done: false
+          }
+        } else {
+          return {
+            value: undefined,
+            done: true
+          }
+        }
+      }
     }
   }
 
@@ -23,3 +36,18 @@ export class ListNode {
     return head.next!;
   }
 }
+
+function* generateFibnacci(n: number) {
+  let [prev, curr] = [1, 1];
+  for(let i = 1; i <= n; i ++) {
+    if(i <= 2) yield 1;
+    else {
+      [prev, curr] = [curr, prev + curr];
+      yield curr
+    } 
+  }
+}
+
+let ret = generateFibnacci(2)
+
+ret.next()
