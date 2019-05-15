@@ -2,7 +2,6 @@
 // n = 2, [[() ()], [(())]]
 // n = 3, [[()()()]], [(())()], [()(())], [((()))]
 export function generateParenthesis(n: number): string[] {
-  console.log(generateAll(n));
   return generateAll(n * 2).filter(isParenthesis);
 }
 
