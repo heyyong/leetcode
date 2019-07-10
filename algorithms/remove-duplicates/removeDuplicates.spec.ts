@@ -10,7 +10,6 @@ describe("removeDuplicates", function() {
   test("[0, 0, 1, 1, 1, 2,2,2 3, 3, 4]", function() {
     const arr = [0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 4];
     expect(removeDuplicates(arr)).toEqual(5);
-    console.log(arr);
     expect(arr.slice(0, 5)).toEqual([0, 1, 2, 3, 4]);
   });
 });
