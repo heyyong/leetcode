@@ -1,4 +1,5 @@
 # removeElement
+> https://leetcode-cn.com/problems/remove-element/submissions/
 
 ## 关于方法二的注意事项
 
