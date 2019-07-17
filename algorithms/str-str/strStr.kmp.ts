@@ -15,7 +15,9 @@ export function strStr(haystack: string, needle: string): number {
     if (j === 0) {
       next[i] = 0;
       i++;
-    } else j = next[j - 1];
+    } else {
+      j = next[j - 1];
+    };
   }
 
   let p = 0;
@@ -36,7 +38,7 @@ export function strStr(haystack: string, needle: string): number {
       p += k - next[k - 1];
       k = next[k - 1];
     }
-  }
+ }
 
   return -1;
 }

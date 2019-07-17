@@ -37,5 +37,9 @@ describe("strStr", function() {
     test("mississippi and sipp should return 6", function() {
       expect(strStr("mississippi", "sipp")).toEqual(6);
     });
+
+    test("ababababababababababab and abababab should return 0", function() {
+      expect(strStr("ababababababababababab", "abababab")).toEqual(0)
+    })
   });
 });
