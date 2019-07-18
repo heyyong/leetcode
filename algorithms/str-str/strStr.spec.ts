@@ -39,7 +39,7 @@ describe("strStr", function() {
     });
 
     test("ababababababababababab and abababab should return 0", function() {
-      expect(strStr("ababababababababababab", "abababab")).toEqual(0)
-    })
+      expect(strStr("ababababababababababab", "abababab")).toEqual(0);
+    });
   });
 });

@@ -1,19 +1,19 @@
 export function strStr(haystack: string, needle: string): number {
   if (needle === "") return 0;
 
-  function isSame(i: number) {
-    let j = 0;
-    while (needle[j] !== undefined) {
-      if (haystack[i + j] !== needle[j]) return false;
-
+  let i = 0, j = 0;
+  while(haystack[i] !== undefined && needle[j] !== undefined) {
+    if(haystack[i] === needle[j]) {
+      i++;
       j++;
+    } else {
+      i = i - j + 1;
+      j = 0;
     }
-    return true;
   }
 
-  for (let i = 0; i < haystack.length; i++) {
-    if (isSame(i)) return i;
-  }
+  if(needle[j] === undefined) return i - j;
+
 
   return -1;
 }
